@@ -1,0 +1,351 @@
+:root {
+    --ink: #1b2a49;
+    --paper: #f5f7fb;
+    --card: #fff;
+    --hl: #ffd84d;
+    --blue: #3d6fe0;
+    --slate: #5b6785;
+    --line: #dde3ee;
+    --red: #c8372d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font: 16px/1.5 "IBM Plex Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Bricolage Grotesque", "IBM Plex Sans", sans-serif;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+}
+
+/* Buttons */
+
+.btn {
+    background: var(--ink);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #2a3d66;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.btn.ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+}
+
+.btn.danger {
+    background: transparent;
+    color: var(--red);
+    border: 1.5px solid var(--red);
+}
+
+/* Form Elements */
+
+input,
+select {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    border: 1.5px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0.9rem 0 0.3rem;
+}
+
+/* Messages */
+
+.msg {
+    margin-top: 0.8rem;
+    font-size: 0.92rem;
+    min-height: 1.3em;
+}
+
+.msg.err {
+    color: var(--red);
+}
+
+.msg.ok {
+    color: #1c7a4a;
+}
+
+mark.brand {
+    background: linear-gradient(
+        transparent 55%,
+        var(--hl) 55%
+    );
+    color: inherit;
+}
+
+/* Login */
+
+.auth {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+}
+
+.auth .side {
+    background: var(--ink);
+    color: #fff;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth .side h1 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.02;
+}
+
+.auth .side p {
+    color: #b9c4de;
+    max-width: 34ch;
+    margin-top: 1.2rem;
+}
+
+.auth .box {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 440px;
+    width: 100%;
+    margin: auto;
+}
+
+/* Tabs */
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 0.55rem;
+    border: 0;
+    border-bottom: 3px solid var(--line);
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--slate);
+}
+
+.tabs button.on {
+    border-color: var(--hl);
+    color: var(--ink);
+}
+
+.box .btn {
+    width: 100%;
+    margin-top: 1.2rem;
+}
+
+/* Dashboard Header */
+
+header.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+header.top .r {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--slate);
+}
+
+/* Dashboard Layout */
+
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Subjects */
+
+.subjects {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+}
+
+.subjects h3 {
+    font-size: 0.95rem;
+    color: var(--slate);
+    margin-bottom: 0.4rem;
+}
+
+.subjects button {
+    text-align: left;
+    padding: 0.55rem 0.8rem;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    color: var(--ink);
+}
+
+.subjects button:hover {
+    background: #e8edf7;
+}
+
+.subjects button.on {
+    background: var(--hl);
+    font-weight: 600;
+}
+
+/* Panels */
+
+.panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+progress {
+    width: 100%;
+    height: 8px;
+    margin-top: 0.8rem;
+}
+
+/* Notes */
+
+.note {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.note:last-child {
+    border: 0;
+}
+
+.note b {
+    display: block;
+}
+
+.note small {
+    color: var(--slate);
+}
+
+.note .acts {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.empty {
+    color: var(--slate);
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 760px) {
+    .auth {
+        grid-template-columns: 1fr;
+    }
+
+    .auth .side {
+        padding: 2rem;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .subjects {
+        flex-direction: row;
+        overflow-x: auto;
+        position: static;
+    }
+
+    .subjects h3 {
+        display: none;
+    }
+
+    .subjects button {
+        white-space: nowrap;
+    }
+
+    .grid2 {
+        grid-template-columns: 1fr;
+    }
+
+    .note {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cloud Notes Hub – Sign in</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <main class="auth">
+
+    <section class="side">
+      <h1>Cloud Notes<br>Hub</h1>
+
+      <p>
+        Upload your subject notes once. Find, view and download your classmates' notes anytime.
+      </p>
+    </section>
+
+    <section class="box">
+
+      <div class="tabs" role="tablist">
+        <button id="tLogin" class="on" type="button">Log in</button>
+        <button id="tReg" type="button">Create account</button>
+      </div>
+
+      <form id="form">
+
+        <div id="nameRow" hidden>
+          <label for="name">Full name</label>
+          <input id="name" autocomplete="name">
+        </div>
+
+        <label for="email">Email</label>
+        <input id="email"
+               type="email"
+               required
+               autocomplete="email">
+
+        <label for="pass">Password (min 6 characters)</label>
+        <input id="pass"
+               type="password"
+               minlength="6"
+               required
+               autocomplete="current-password">
+
+        <button class="btn" id="go">Log in</button>
+
+        <p class="msg" id="msg" role="alert"></p>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+
+  <script src="js/auth.js"></script>
+
+</body>
+</html>

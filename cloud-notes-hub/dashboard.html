@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cloud Notes Hub – Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="top">
+
+    <h2>
+      <mark class="brand">Cloud Notes Hub</mark>
+    </h2>
+
+    <div class="r">
+      <span id="who"></span>
+      <button class="btn ghost" id="logout">Log out</button>
+    </div>
+
+  </header>
+
+  <div class="layout">
+
+    <nav class="subjects" aria-label="Subjects">
+
+      <h3>Subjects</h3>
+
+      <div id="subjects" style="display: contents"></div>
+
+    </nav>
+
+    <main>
+
+      <h2 id="subjTitle" style="margin-bottom: 1rem"></h2>
+
+      <!-- Upload Notes Section -->
+      <section class="panel">
+
+        <h3 style="margin-bottom: .4rem">
+          Upload notes
+        </h3>
+
+        <form id="upForm">
+
+          <div class="grid2">
+
+            <div>
+              <label for="title">Note title</label>
+
+              <input
+                id="title"
+                placeholder="e.g. Unit 2 – Virtualization"
+                required
+              >
+            </div>
+
+            <div>
+              <label for="file">
+                File (PDF, DOC, PPT, image – max 10 MB)
+              </label>
+
+              <input
+                id="file"
+                type="file"
+                required
+              >
+            </div>
+
+          </div>
+
+          <progress
+            id="bar"
+            value="0"
+            max="100"
+            hidden
+          ></progress>
+
+          <button
+            class="btn"
+            id="up"
+            style="margin-top: 1rem"
+          >
+            Upload note
+          </button>
+
+          <p
+            class="msg"
+            id="msg"
+            role="alert"
+          ></p>
+
+        </form>
+
+      </section>
+
+      <!-- Search Notes Section -->
+      <section class="panel">
+
+        <label
+          for="q"
+          style="margin-top: 0"
+        >
+          Search notes in this subject
+        </label>
+
+        <input
+          id="q"
+          type="search"
+          placeholder="Search by title, file name or uploader"
+        >
+
+        <div id="list"></div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+  <!-- Project JavaScript -->
+  <script src="js/firebase-config.js"></script>
+
+  <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>
